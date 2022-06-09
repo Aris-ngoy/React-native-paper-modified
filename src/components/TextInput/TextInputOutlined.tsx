@@ -70,6 +70,8 @@ const TextInputOutlined = ({
   left,
   right,
   placeholderTextColor,
+  borderWidth,
+  borderWithfocused,
   ...rest
 }: ChildTextInputProps) => {
   const adornmentConfig = getAdornmentConfig({ left, right });
@@ -282,6 +284,8 @@ const TextInputOutlined = ({
         activeColor={activeColor}
         outlineColor={outlineColor}
         backgroundColor={backgroundColor}
+        borderWidth={borderWidth}
+        borderWithfocused={borderWithfocused}
       />
       <View>
         <View
@@ -353,6 +357,8 @@ type OutlineProps = {
   outlineColor?: string;
   backgroundColor: ColorValue;
   theme: ReactNativePaper.Theme;
+  borderWidth : number,
+  borderWithfocused : number
 };
 
 const Outline = ({
@@ -362,6 +368,8 @@ const Outline = ({
   outlineColor,
   focused,
   backgroundColor,
+  borderWidth,
+  borderWithfocused
 }: OutlineProps) => (
   <View
     testID="text-input-outline"
@@ -372,7 +380,7 @@ const Outline = ({
       {
         backgroundColor,
         borderRadius: theme.roundness,
-        borderWidth: focused ? 2 : 1,
+        borderWidth: focused ? borderWithfocused : borderWidth,
         borderColor: hasActiveOutline ? activeColor : outlineColor,
       },
     ]}

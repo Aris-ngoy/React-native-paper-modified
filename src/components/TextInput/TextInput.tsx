@@ -133,6 +133,9 @@ export type TextInputProps = React.ComponentPropsWithRef<
    * @optional
    */
   theme: ReactNativePaper.Theme;
+
+  borderWidth : number;
+  borderWithfocused : number
 };
 
 interface CompoundedComponent

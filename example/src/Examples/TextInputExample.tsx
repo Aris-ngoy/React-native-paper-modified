@@ -73,38 +73,6 @@ const TextInputAvoidingView = ({ children }: AvoidingViewProps) => {
 
 const TextInputExample = () => {
   const [state, dispatch] = React.useReducer(inputReducer, initialState);
-  const {
-    text,
-    customIconText,
-    name,
-    outlinedText,
-    largeText,
-    flatTextPassword,
-    outlinedLargeText,
-    outlinedTextPassword,
-    nameNoPadding,
-    nameRequired,
-    flatDenseText,
-    flatDense,
-    outlinedDenseText,
-    outlinedDense,
-    flatMultiline,
-    flatTextArea,
-    flatUnderlineColors,
-    outlinedMultiline,
-    outlinedTextArea,
-    outlinedColors,
-    maxLengthName,
-    flatTextSecureEntry,
-    outlineTextSecureEntry,
-    iconsColor: {
-      flatLeftIcon,
-      flatRightIcon,
-      outlineLeftIcon,
-      outlineRightIcon,
-      customIcon,
-    },
-  } = state;
 
   const _isUsernameValid = (name: string) => /^[a-zA-Z]*$/.test(name);
 
@@ -139,7 +107,7 @@ const TextInputExample = () => {
         keyboardShouldPersistTaps={'always'}
         removeClippedSubviews={false}
       >
-        <TextInput
+        {/* <TextInput
           style={styles.inputContainerStyle}
           label="Flat input"
           placeholder="Type something"
@@ -531,13 +499,13 @@ const TextInputExample = () => {
             multiline
             style={styles.fixedHeight}
           />
-        </View>
+        </View> */}
         <View style={styles.inputContainerStyle}>
           <TextInput
-            mode="flat"
+            mode="outlined"
+            borderWidth={1}
+            borderWithfocused={1}
             label="Flat multiline text input with fixed height"
-            multiline
-            style={styles.fixedHeight}
           />
         </View>
       </ScreenWrapper>
